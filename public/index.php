@@ -1,4 +1,7 @@
 <?php
-require __DIR__.'/../src/warkamoowee.php';
+require __DIR__.'/../vendor/autoload.php';
 
+use \Warkamoowee\App;
+
+$app = new App;
 $app->run();
