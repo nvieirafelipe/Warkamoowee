@@ -5,17 +5,18 @@ use ORM;
 
 class App
 {
-    public function run()
+    public function run($config)
     {
         $sailorWithIAP = ORM::for_table('sailors')->find_one();
 
-        $user = ORM::for_table('sailors')->find_one();
+        $sailorRepository = $config['doctrine']->getRepository('Warkamoowee\Models\Sailor');
+        $sailorWithDoctrine = $sailorRepository->findAll()[0];
 
         $app = new Slim();
         $app->contentType('application/json;charset=utf-8');
 
-        $app->get('/', function () use ($app, $sailorWithIAP) {
-            echo '{"greetings": "Hello '.$sailorWithIAP->name.', Welcome to Warkamoowee!"}';
+        $app->get('/', function () use ($app, $sailorWithDoctrine) {
+            echo '{"greetings": "Hello '.$sailorWithDoctrine->getName().', Welcome to Warkamoowee!"}';
         });
 
         $app->run();
