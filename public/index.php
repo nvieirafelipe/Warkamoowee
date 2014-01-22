@@ -2,12 +2,9 @@
 
 require __DIR__.'/../vendor/autoload.php';
 
-use \Dotenv;
-use \Warkamoowee\App;
+require __DIR__.'/../config/idorm_and_paris.php';
 
-try {
-  Dotenv::load(__DIR__);
-} catch (Exception $e) {}
+use \Warkamoowee\App;
 
 $app = new App;
 $app->run();
