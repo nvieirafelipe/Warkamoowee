@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+
+if [ $# -gt 0 ]; then
+  vendor/bin/phpunit --colors $1
+else
+  vendor/bin/phpunit --colors tests/
+fi

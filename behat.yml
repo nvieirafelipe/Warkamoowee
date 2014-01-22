@@ -1,0 +1,6 @@
+default:
+    extensions:
+        Behat\MinkExtension\Extension:
+            base_url: http://localhost:7001
+            goutte: ~
+            selenium2: ~

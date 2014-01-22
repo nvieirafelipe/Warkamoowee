@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -e
+
+php -S localhost:7001 > /dev/null &
+phppid=$!
+
+if [ $# -gt 0 ]; then
+  vendor/bin/behat $1
+else
+  vendor/bin/behat features/
+fi
+
+kill $phppid

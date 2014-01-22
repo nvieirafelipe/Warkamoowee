@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -e
+
+if ! which php >/dev/null ; then
+  echo "You'll need php"
+  exit
+fi
+
+if ! which composer >/dev/null ; then
+  echo "You'll need composer"
+  exit
+fi
+
+composer install --dev
