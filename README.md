@@ -8,3 +8,18 @@ Playground app with [PHP Slim](http://www.slimframework.com), [Idiorm & Paris](h
 First run `script/bootstrap` to check for dependencies.
 
 Now you can run `script/features` to check our feature tests and `script/tests` for unit tests.
+
+## Database
+You'll need and MySQL database named: warkamoowee
+
+| Tables        |
+| ------------- |
+| sailors       |
+
+### sailors:
+
+| field   | type   |
+|---------|--------|
+| id      | int    |
+|---------|--------|
+| name    | varchar|
