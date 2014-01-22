@@ -9,9 +9,9 @@ class App
 {
     public function run()
     {
-        ORM::configure('mysql:host=localhost;dbname=warkamoowee');
-        ORM::configure('username', 'root');
-        ORM::configure('password', '');
+        ORM::configure('mysql:host='.$_ENV['DB_HOST'].';dbname='.$_ENV['DB_NAME']);
+        ORM::configure('username', $_ENV['DB_USERNAME']);
+        ORM::configure('password', $_ENV['DB_PASSWD']);
 
         $user = ORM::for_table('sailors')->find_one();
 
